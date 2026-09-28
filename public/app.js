@@ -119,8 +119,8 @@ async function startProxy() {
   await navigator.serviceWorker.ready;
   log("service-worker-ready", { controller: Boolean(navigator.serviceWorker.controller) });
 
-  const muxWorkerPath = `/bare-mux/worker.js?build=${Date.now()}`;
-  const workerResponse = await fetch(muxWorkerPath, { cache: "no-store" });
+  const muxWorkerPath = "/bare-mux/worker.js";
+  const workerResponse = await fetch(`${muxWorkerPath}?check=${Date.now()}`, { cache: "no-store" });
   log("mux-worker-asset-response", {
     status: workerResponse.status,
     contentType: workerResponse.headers.get("content-type"),
