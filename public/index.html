@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f2f2eb" />
+    <title>RBS Proxy</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="RBS Proxy home"><span>R</span>BS</a>
+      <div class="connection"><span class="connection-dot"></span><span id="status">Starting locally</span></div>
+    </header>
+
+    <main class="workspace">
+      <form class="addressbar" id="address-form">
+        <label class="sr-only" for="address">Website address</label>
+        <span class="address-mark" aria-hidden="true">↗</span>
+        <input id="address" name="address" type="text" inputmode="url" autocomplete="url" placeholder="Enter a website address" spellcheck="false" />
+        <button class="open-button" type="submit">Open <span aria-hidden="true">↵</span></button>
+      </form>
+
+      <section class="browser" aria-label="Browser">
+        <nav class="browser-controls" aria-label="Page controls">
+          <button class="icon-button" id="back" type="button" aria-label="Go back" title="Go back" disabled>←</button>
+          <button class="icon-button" id="forward" type="button" aria-label="Go forward" title="Go forward" disabled>→</button>
+          <button class="icon-button" id="reload" type="button" aria-label="Reload page" title="Reload page" disabled>↻</button>
+          <span class="page-indicator" id="page-indicator">NEW TAB</span>
+        </nav>
+        <div class="viewport" id="viewport">
+          <div class="empty-state" id="empty-state">
+            <span class="empty-index">R / 01</span>
+            <p>Ready when you are.</p>
+          </div>
+        </div>
+      </section>
+      <p class="footnote">For local use only. Browse responsibly.</p>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
